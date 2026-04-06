@@ -1395,6 +1395,44 @@ section { padding: 100px 80px; }
   font-size: .72rem; color: var(--text-muted);
 }
 
+/* ── DOCUMENT LINKS ── */
+.designer-note-docs {
+  display: flex; flex-direction: column; gap: 12px;
+  margin-top: 32px; max-width: 480px; margin-left: auto; margin-right: auto;
+}
+.doc-link {
+  display: flex; align-items: center; gap: 16px;
+  padding: 16px 20px; border-radius: 10px;
+  border: 1.5px solid var(--border);
+  background: var(--surface);
+  text-decoration: none;
+  transition: all .2s;
+}
+.doc-link:hover {
+  border-color: var(--primary); background: var(--primary-pale);
+  transform: translateX(4px);
+}
+.doc-link-icon {
+  width: 44px; height: 44px; border-radius: 10px;
+  background: var(--primary-pale); color: var(--primary);
+  display: flex; align-items: center; justify-content: center;
+  font-size: .7rem; font-weight: 700; letter-spacing: .02em;
+  flex-shrink: 0;
+}
+.doc-link:hover .doc-link-icon { background: var(--primary); color: #fff; }
+.doc-link-text { flex: 1; }
+.doc-link-text strong {
+  display: block; font-size: .88rem; color: var(--text-main);
+}
+.doc-link-text span {
+  display: block; font-size: .72rem; color: var(--text-muted); margin-top: 2px;
+}
+.doc-link-arrow {
+  font-size: 1rem; font-weight: 600; color: var(--text-muted);
+  transition: color .2s, transform .2s;
+}
+.doc-link:hover .doc-link-arrow { color: var(--primary); transform: translateX(4px); }
+
 /* ── PHASE 1 ── */
 .phase1 { background: var(--surface); }
 .phase1-grid {
