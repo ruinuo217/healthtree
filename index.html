@@ -1,0 +1,1386 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HealthTree — UX Case Study by Reyna</title>
+  <meta name="description" content="HealthTree 數位醫療儀表板 — 從商業策略到高擬真 Prototype 的完整 UX Case Study">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- ════════ NAV ════════ -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">
+    <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M14 3L22 13H18V25H10V13H6L14 3Z" fill="currentColor"/>
+    </svg>
+    HealthTree
+  </a>
+  <ul class="nav-links">
+    <li><a href="#phase1">探索</a></li>
+    <li><a href="#phase2">定義</a></li>
+    <li><a href="#phase3">架構</a></li>
+    <li><a href="#roadmap">實作流程</a></li>
+    <li><a href="#phase4">設計</a></li>
+    <li><a href="#phase5">驗證</a></li>
+    <li><a href="#phase6">交接</a></li>
+  </ul>
+  <a href="#" class="nav-cta">查看 Prototype →</a>
+</nav>
+
+<!-- ════════ HERO ════════ -->
+<section class="hero" id="top">
+  <div class="hero-content">
+    <div class="hero-label">UX Case Study</div>
+    <h1>HealthTree<br><em>數位醫療</em>儀表板</h1>
+    <p class="hero-designer">Design by Reyna</p>
+    <p class="hero-desc">
+      針對數位藥局市場，從零完成<strong>商業模式畫布（BMC）</strong>規劃、<strong>市場痛點分析</strong>，到 Figma 高擬真互動 Prototype 設計，最終執行 Pitch 提案。整合商業策略與 UX 設計能力，展現從問題定義到產品提案的完整能力鏈。
+    </p>
+    <div class="tags">
+      <span class="tag">Figma</span>
+      <span class="tag">High-fidelity Prototype</span>
+      <span class="tag">Business Model Canvas</span>
+      <span class="tag">UX Research</span>
+      <span class="tag">Pitch Deck</span>
+    </div>
+    <div class="hero-actions">
+      <a href="#" class="btn-primary">Figma Prototype →</a>
+      <a href="#phase1" class="btn-ghost">查看提案 ↓</a>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="mockup-browser">
+      <div class="mockup-bar">
+        <div class="dot dot-r"></div>
+        <div class="dot dot-y"></div>
+        <div class="dot dot-g"></div>
+        <div class="mockup-url">healthtree.app/dashboard</div>
+      </div>
+      <div class="mockup-body">
+        <div class="dash-greeting">🌿 早安，藥師 Reyna！今日需關注 3 位高風險患者</div>
+        <div class="dash-title-sm">社區健康儀表板</div>
+        <div class="dash-stats">
+          <div class="stat-card">
+            <div class="stat-num red">3</div>
+            <div class="stat-label">異常警示</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num yellow">8</div>
+            <div class="stat-label">待回診</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num green">87%</div>
+            <div class="stat-label">達標率</div>
+          </div>
+        </div>
+        <div class="mini-chart">
+          <div class="mini-chart-label">本週社區達標率趨勢</div>
+          <svg viewBox="0 0 280 48" fill="none" style="width:100%;height:48px;">
+            <defs>
+              <linearGradient id="cg" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#1A6B3C" stop-opacity=".15"/>
+                <stop offset="100%" stop-color="#1A6B3C" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <polygon points="0,40 40,35 80,28 120,32 160,20 200,15 240,12 280,8 280,48 0,48" fill="url(#cg)"/>
+            <polyline points="0,40 40,35 80,28 120,32 160,20 200,15 240,12 280,8" stroke="#1A6B3C" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="280" cy="8" r="3.5" fill="#1A6B3C"/>
+          </svg>
+        </div>
+        <div class="patient-list">
+          <div class="patient-row">
+            <div>
+              <div class="patient-name">王阿嬤・82歲</div>
+              <div class="patient-info">血壓 158/96 · 連續 3 天異常</div>
+            </div>
+            <span class="badge badge-red">⚠ 高風險</span>
+          </div>
+          <div class="patient-row">
+            <div>
+              <div class="patient-name">陳伯伯・75歲</div>
+              <div class="patient-info">用藥缺漏 2 天</div>
+            </div>
+            <span class="badge badge-yellow">提醒</span>
+          </div>
+          <div class="patient-row">
+            <div>
+              <div class="patient-name">李阿公・79歲</div>
+              <div class="patient-info">今日已打卡 ✓</div>
+            </div>
+            <span class="badge badge-green">正常</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-cue">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ════════ PHASE PROGRESS BAR ════════ -->
+<div class="phase-bar reveal">
+  <div class="phase-bar-inner">
+    <div class="phase-bar-label">Double Diamond Design Process</div>
+    <div class="phase-bar-track">
+      <a href="#phase1" class="phase-bar-step" data-phase="phase1">
+        <div class="phase-bar-dot"></div>
+        <div class="phase-bar-text"><span>01</span> Discover</div>
+      </a>
+      <div class="phase-bar-line"></div>
+      <a href="#phase2" class="phase-bar-step" data-phase="phase2">
+        <div class="phase-bar-dot"></div>
+        <div class="phase-bar-text"><span>02</span> Define</div>
+      </a>
+      <div class="phase-bar-line"></div>
+      <a href="#phase3" class="phase-bar-step" data-phase="phase3">
+        <div class="phase-bar-dot"></div>
+        <div class="phase-bar-text"><span>03</span> Ideate</div>
+      </a>
+      <div class="phase-bar-line"></div>
+      <a href="#phase4" class="phase-bar-step" data-phase="phase4">
+        <div class="phase-bar-dot"></div>
+        <div class="phase-bar-text"><span>04</span> Design</div>
+      </a>
+      <div class="phase-bar-line"></div>
+      <a href="#phase5" class="phase-bar-step" data-phase="phase5">
+        <div class="phase-bar-dot"></div>
+        <div class="phase-bar-text"><span>05</span> Validate</div>
+      </a>
+      <div class="phase-bar-line"></div>
+      <a href="#phase6" class="phase-bar-step" data-phase="phase6">
+        <div class="phase-bar-dot"></div>
+        <div class="phase-bar-text"><span>06</span> Deliver</div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ PHASE 1: Discover ════════ -->
+<section class="phase1" id="phase1">
+  <div class="section-eyebrow reveal">Phase 01 · Discover</div>
+  <h2 class="section-title reveal reveal-delay-1">商業探索與市場研究</h2>
+  <p class="section-sub reveal reveal-delay-2">從商業目標出發，以 BMC 工具解構市場機會，透過數據驗證痛點真實性，找出傳統藥局數位轉型的斷點與介入點。</p>
+
+  <div class="stats-strip reveal" style="margin-top: 56px;">
+    <div class="stat-strip-item">
+      <div class="stat-strip-num">400<span style="font-size:1.8rem">萬+</span></div>
+      <div class="stat-strip-label">台灣慢性病長者<br>需長期用藥管理</div>
+    </div>
+    <div class="stat-strip-item">
+      <div class="stat-strip-num">45<span style="font-size:1.8rem">%</span></div>
+      <div class="stat-strip-label">長輩曾漏服或<br>錯服藥物</div>
+    </div>
+    <div class="stat-strip-item">
+      <div class="stat-strip-num">83<span style="font-size:1.8rem">%</span></div>
+      <div class="stat-strip-label">子女無法即時<br>得知長輩用藥狀況</div>
+    </div>
+  </div>
+
+  <div class="phase1-grid" style="margin-top: 56px;">
+    <div class="phase1-left">
+      <div class="pain-card reveal" style="border-left:4px solid var(--primary);">
+        <h5>價值主張 Value Proposition</h5>
+        <div class="info-items" style="margin-top:10px;">
+          <div class="info-item"><div class="info-item-dot"></div><div class="info-item-text"><strong>B2B：</strong>提供藥局「低學習門檻」的數據 CRM，將被動賣藥轉為主動健康追蹤</div></div>
+          <div class="info-item"><div class="info-item-dot"></div><div class="info-item-text"><strong>B2C：</strong>為長輩提供遠距健康守護網，讓子女以 NT$99/月換取每日安心感</div></div>
+          <div class="info-item"><div class="info-item-dot"></div><div class="info-item-text"><strong>B2B2G：</strong>去識別化公衛數據加值，協助藥局爭取 ESG 與政府補助</div></div>
+        </div>
+      </div>
+
+      <div class="pain-card reveal reveal-delay-1" style="border-left:4px solid var(--status-info);">
+        <h5>目標客群 Target Segments</h5>
+        <div class="info-items" style="margin-top:10px;">
+          <div class="info-item"><div class="info-item-dot"></div><div class="info-item-text">面臨轉型壓力、缺乏 IT 資源的中小型<strong>獨立社區藥局</strong>（45–65 歲執業藥師）</div></div>
+          <div class="info-item"><div class="info-item-dot"></div><div class="info-item-text">在外地工作、擔心爸媽的<strong>青壯年子女</strong>（30–50 歲雙薪家庭）</div></div>
+        </div>
+      </div>
+
+      <div class="pain-card reveal reveal-delay-2" style="border-left:4px solid var(--status-warn);">
+        <h5>收益來源 Revenue Model</h5>
+        <div class="info-items" style="margin-top:10px;">
+          <div class="info-item"><div class="info-item-dot"></div><div class="info-item-text">B2B SaaS 訂閱制 NT$1,500–3,000/月，ROI 達 <strong>4–8 倍</strong>（額外月營收 ~NT$12,000）</div></div>
+          <div class="info-item"><div class="info-item-dot"></div><div class="info-item-text">首月免費導入策略，待藥局驗證「帶來的營收 > 訂閱費」後自然付費</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="phase1-right reveal reveal-delay-1">
+      <h4 style="font-size:.85rem;font-weight:700;letter-spacing:.05em;color:var(--primary);text-transform:uppercase;margin-bottom:20px;display:flex;align-items:center;gap:8px;"><span>❌</span> 三大市場痛點</h4>
+      <div class="pain-cards">
+        <div class="pain-card pain-red">
+          <h5>🏪 藥局缺乏數位工具</h5>
+          <p>傳統社區藥局面對連鎖藥局競爭，沒有 CRM 系統追蹤熟客，客源逐漸流失。傳統 HIS 系統功能龐雜、介面擁擠，缺乏「以人為中心」的長期數據追蹤。</p>
+        </div>
+        <div class="pain-card pain-yellow">
+          <h5>👩‍👦 子女焦慮無解</h5>
+          <p>在外地工作的子女無法掌握爸媽每天是否按時吃藥、量血壓。打電話問，長輩說「沒事沒事」，擔憂卻無從得知，焦慮持續累積。</p>
+        </div>
+        <div class="pain-card">
+          <h5>👴 長輩依從性差</h5>
+          <p>「忘記量」、「忘記吃」是最常見的慢性病管理失敗原因，缺乏有趣的誘因機制。藥師日常營運繁忙，無力主動關懷慢性病患，紙本數據難以追蹤。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ PHASE 2: Define ════════ -->
+<section class="persona-section" id="phase2">
+  <div class="section-eyebrow reveal">Phase 02 · Define</div>
+  <h2 class="section-title reveal reveal-delay-1">使用者定義與問題收斂</h2>
+  <p class="section-sub reveal reveal-delay-2">HealthTree 連結三方角色，但核心需求彼此拉扯。透過 Persona 收斂問題邊界，建立設計決策的裁判依據。</p>
+
+  <div class="persona-grid reveal" style="margin-top:48px;">
+    <!-- Persona 1: 藥師 -->
+    <div class="persona-card">
+      <div class="persona-avatar">👨‍⚕️</div>
+      <div class="persona-meta">
+        <h4>陳藥師</h4>
+        <span class="persona-tag">B2B 端 · 主要使用者</span>
+      </div>
+      <div class="persona-profile">
+        <div class="persona-detail"><span>年齡</span><strong>52 歲</strong></div>
+        <div class="persona-detail"><span>身份</span><strong>社區藥局負責人</strong></div>
+        <div class="persona-detail"><span>科技力</span><strong>中等（會用 LINE）</strong></div>
+      </div>
+      <div class="persona-quote">"我知道該關心老客人，但每天配藥、進貨就忙不完了，哪有時間一個一個打電話？"</div>
+      <div class="persona-goals">
+        <div class="persona-goal-label goal-green">目標 Goals</div>
+        <ul>
+          <li>用最少時間掌握高風險病患</li>
+          <li>留住老客人，對抗連鎖藥局</li>
+          <li>證明數位投資有回報</li>
+        </ul>
+      </div>
+      <div class="persona-goals">
+        <div class="persona-goal-label goal-red">痛點 Frustrations</div>
+        <ul>
+          <li>沒時間學習複雜系統</li>
+          <li>紙本記錄無法追蹤趨勢</li>
+          <li>不知道哪些客人快流失</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Persona 2: 子女 -->
+    <div class="persona-card">
+      <div class="persona-avatar">👩‍💼</div>
+      <div class="persona-meta">
+        <h4>林小芳</h4>
+        <span class="persona-tag">B2C 端 · 付費者</span>
+      </div>
+      <div class="persona-profile">
+        <div class="persona-detail"><span>年齡</span><strong>38 歲</strong></div>
+        <div class="persona-detail"><span>身份</span><strong>科技業 PM・雙薪家庭</strong></div>
+        <div class="persona-detail"><span>科技力</span><strong>高（重度手機使用者）</strong></div>
+      </div>
+      <div class="persona-quote">"每次打電話回去問，媽都說『沒事沒事』。但上次回家發現整盒藥都沒拆..."</div>
+      <div class="persona-goals">
+        <div class="persona-goal-label goal-green">目標 Goals</div>
+        <ul>
+          <li>不打電話也能掌握爸媽健康</li>
+          <li>異常時第一時間收到通知</li>
+          <li>花小錢買到每日安心感</li>
+        </ul>
+      </div>
+      <div class="persona-goals">
+        <div class="persona-goal-label goal-red">痛點 Frustrations</div>
+        <ul>
+          <li>工作太忙無法天天問</li>
+          <li>長輩報喜不報憂</li>
+          <li>找不到輕量不侵犯隱私的工具</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Persona 3: 長輩 -->
+    <div class="persona-card persona-card-highlight">
+      <div class="persona-avatar">👵</div>
+      <div class="persona-meta">
+        <h4>王阿嬤</h4>
+        <span class="persona-tag">B2C 端 · 被照護者</span>
+      </div>
+      <div class="persona-profile">
+        <div class="persona-detail"><span>年齡</span><strong>78 歲</strong></div>
+        <div class="persona-detail"><span>身份</span><strong>退休・獨居・三高慢性病</strong></div>
+        <div class="persona-detail"><span>科技力</span><strong>低（只會接 LINE 視訊）</strong></div>
+      </div>
+      <div class="persona-quote">"我自己會照顧自己啦，不用他們一直盯。可是...有時候真的會忘記吃藥。"</div>
+      <div class="persona-goals">
+        <div class="persona-goal-label goal-green">目標 Goals</div>
+        <ul>
+          <li>維持獨立自主的尊嚴</li>
+          <li>不想被當「病人」對待</li>
+          <li>簡單好操作就好</li>
+        </ul>
+      </div>
+      <div class="persona-goals">
+        <div class="persona-goal-label goal-red">痛點 Frustrations</div>
+        <ul>
+          <li>抗拒「被監控」的感覺</li>
+          <li>字太小、步驟太多就放棄</li>
+          <li>不想造成子女負擔</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Persona → Design Decision Linkage -->
+  <div class="persona-linkage reveal" style="margin-top:48px;">
+    <h4 style="font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--primary);margin-bottom:16px;">Persona → 設計決策推導</h4>
+    <div class="linkage-grid">
+      <div class="linkage-item">
+        <div class="linkage-from">陳藥師的痛點<br><span>「沒時間一個一個打電話」</span></div>
+        <div class="linkage-arrow">→</div>
+        <div class="linkage-to">Dashboard 例外管理原則<br><span>只顯示異常，10 秒內找到目標</span></div>
+      </div>
+      <div class="linkage-item">
+        <div class="linkage-from">林小芳的痛點<br><span>「長輩報喜不報憂」</span></div>
+        <div class="linkage-arrow">→</div>
+        <div class="linkage-to">自動推播機制<br><span>異常時主動通知子女，無需打電話</span></div>
+      </div>
+      <div class="linkage-item linkage-highlight">
+        <div class="linkage-from">王阿嬤的痛點<br><span>「抗拒被監控的感覺」</span></div>
+        <div class="linkage-arrow">→</div>
+        <div class="linkage-to">尊嚴導向文案設計<br><span>「照顧自己」取代「有人在看」</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Design Rationale — Highlight Moment -->
+  <div class="design-rationale reveal" style="margin-top:32px;">
+    <div class="rationale-badge">CORE DESIGN RATIONALE</div>
+    <h3 class="rationale-title">「被監視」→「照顧自己」</h3>
+    <p class="rationale-desc">HealthTree 最大的設計陷阱是把長輩端做成一般健康 App 縮小版。<strong>長輩拒絕「被監視」的心理是整個產品的核心設計約束。</strong>所有打卡 UI 語氣、按鈕文案、通知措辭，都必須翻譯成「照顧自己」的主動語態。這個洞察源自王阿嬤 Persona 的核心痛點，貫穿整個設計系統。</p>
+    <div class="rationale-compare">
+      <div class="rationale-before">
+        <div class="rationale-label rationale-label-bad">Before — 監控語態</div>
+        <div class="rationale-card rationale-card-bad">
+          <div class="rationale-screen">
+            <div class="rationale-notif-bar">通知</div>
+            <div class="rationale-notif-item rationale-notif-bad">"您的子女正在查看您的血壓紀錄"</div>
+            <div class="rationale-notif-item rationale-notif-bad">"您今天還沒量血壓，家人在等待"</div>
+            <div class="rationale-notif-item rationale-notif-bad">"提醒：您已 2 天未回報健康資料"</div>
+          </div>
+          <div class="rationale-impact">長輩感受：「被盯著」→ 抗拒 → 卸載</div>
+        </div>
+      </div>
+      <div class="rationale-arrow">→</div>
+      <div class="rationale-after">
+        <div class="rationale-label rationale-label-good">After — 尊嚴語態</div>
+        <div class="rationale-card rationale-card-good">
+          <div class="rationale-screen">
+            <div class="rationale-notif-bar">健康日記</div>
+            <div class="rationale-notif-item rationale-notif-good">"今天血壓量得好棒！已存檔到健康日記"</div>
+            <div class="rationale-notif-item rationale-notif-good">"早安！今天也要照顧好自己喔"</div>
+            <div class="rationale-notif-item rationale-notif-good">"本週健康日記已完成 5/7 天！"</div>
+          </div>
+          <div class="rationale-impact">長輩感受：「照顧自己」→ 成就感 → 養成習慣</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Competitive Analysis -->
+  <div class="reveal" style="margin-top:56px;">
+    <h4 style="font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--primary);margin-bottom:20px;">競品分析 Competitive Landscape</h4>
+    <div class="compare-table">
+      <div class="compare-header">
+        <div class="compare-cell compare-feature">功能維度</div>
+        <div class="compare-cell">傳統 HIS</div>
+        <div class="compare-cell">連鎖藥局 App</div>
+        <div class="compare-cell compare-ours">HealthTree ✓</div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell compare-feature">學習門檻</div>
+        <div class="compare-cell"><span class="compare-bad">✕ 高・需培訓</span></div>
+        <div class="compare-cell"><span class="compare-mid">△ 中等</span></div>
+        <div class="compare-cell compare-ours"><strong class="compare-good">✓ 極低 · 10 分鐘上手</strong></div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell compare-feature">長期追蹤</div>
+        <div class="compare-cell"><span class="compare-bad">✕ 僅單次處方</span></div>
+        <div class="compare-cell"><span class="compare-bad">✕ 無</span></div>
+        <div class="compare-cell compare-ours"><strong class="compare-good">✓ AI 連續趨勢分析</strong></div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell compare-feature">子女連結</div>
+        <div class="compare-cell"><span class="compare-bad">✕ 無</span></div>
+        <div class="compare-cell"><span class="compare-bad">✕ 無</span></div>
+        <div class="compare-cell compare-ours"><strong class="compare-good">✓ 即時通知 + 健康日記</strong></div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell compare-feature">營收可視化</div>
+        <div class="compare-cell"><span class="compare-bad">✕ 無法量化</span></div>
+        <div class="compare-cell"><span class="compare-mid">△ 僅總部可見</span></div>
+        <div class="compare-cell compare-ours"><strong class="compare-good">✓ ROI 即時儀表板</strong></div>
+      </div>
+      <div class="compare-row">
+        <div class="compare-cell compare-feature">長輩友善</div>
+        <div class="compare-cell"><span class="compare-bad">✕ 非目標族群</span></div>
+        <div class="compare-cell"><span class="compare-mid">△ 一般 App UI</span></div>
+        <div class="compare-cell compare-ours"><strong class="compare-good">✓ 尊嚴導向設計</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ PHASE 3: Ideate ════════ -->
+<section class="phase2" id="phase3">
+  <div class="section-eyebrow reveal">Phase 03 · Ideate</div>
+  <h2 class="section-title reveal reveal-delay-1">資訊架構與流程設計</h2>
+  <p class="section-sub reveal reveal-delay-2">打造流暢的每日工作流。設計「藥師每日 10 分鐘早晨巡檢」核心使用者流程，以例外管理原則降低認知負擔。</p>
+
+  <div class="flow-container">
+    <h4 class="reveal" style="font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--primary);margin-bottom:24px;">核心使用者流程 — 藥師每日晨間巡檢（含決策分支）</h4>
+    <div class="flow-v2 reveal reveal-delay-1">
+      <!-- Main path -->
+      <div class="flow-v2-row flow-v2-main">
+        <div class="flow-v2-node flow-v2-start">
+          <div class="flow-v2-icon">→</div>
+          <div class="flow-v2-text"><strong>登入系統</strong><span>看見今日摘要</span></div>
+        </div>
+        <div class="flow-v2-arrow">→</div>
+        <div class="flow-v2-node flow-v2-decision">
+          <div class="flow-v2-icon">◇</div>
+          <div class="flow-v2-text"><strong>有異常患者？</strong><span>系統自動判斷</span></div>
+        </div>
+        <div class="flow-v2-arrow">Yes →</div>
+        <div class="flow-v2-node flow-v2-action">
+          <div class="flow-v2-icon">!</div>
+          <div class="flow-v2-text"><strong>查看異常詳情</strong><span>連續趨勢數據</span></div>
+        </div>
+        <div class="flow-v2-arrow">→</div>
+        <div class="flow-v2-node flow-v2-action">
+          <div class="flow-v2-icon">↗</div>
+          <div class="flow-v2-text"><strong>發送 LINE 關懷</strong><span>選模板 → 確認</span></div>
+        </div>
+        <div class="flow-v2-arrow">→</div>
+        <div class="flow-v2-node flow-v2-end">
+          <div class="flow-v2-icon">✓</div>
+          <div class="flow-v2-text"><strong>結案標記</strong><span>< 10 分鐘完成</span></div>
+        </div>
+      </div>
+      <!-- Branch: No anomaly -->
+      <div class="flow-v2-branch">
+        <div class="flow-v2-branch-line"></div>
+        <div class="flow-v2-branch-label">No — 今日無異常</div>
+        <div class="flow-v2-branch-path">
+          <div class="flow-v2-node flow-v2-alt">
+            <div class="flow-v2-icon">∿</div>
+            <div class="flow-v2-text"><strong>瀏覽社區數據</strong><span>整體達標率 + ROI</span></div>
+          </div>
+          <div class="flow-v2-arrow">→</div>
+          <div class="flow-v2-node flow-v2-alt">
+            <div class="flow-v2-icon">↗</div>
+            <div class="flow-v2-text"><strong>主動衛教推播</strong><span>選擇衛教模板</span></div>
+          </div>
+          <div class="flow-v2-arrow">→</div>
+          <div class="flow-v2-node flow-v2-end">
+            <div class="flow-v2-icon">✓</div>
+            <div class="flow-v2-text"><strong>完成巡檢</strong><span>< 3 分鐘</span></div>
+          </div>
+        </div>
+      </div>
+      <!-- Error state -->
+      <div class="flow-v2-error">
+        <div class="flow-v2-error-line"></div>
+        <div class="flow-v2-error-label">Error — LINE 發送失敗</div>
+        <div class="flow-v2-node flow-v2-error-node">
+          <div class="flow-v2-icon">!</div>
+          <div class="flow-v2-text"><strong>顯示重試提示</strong><span>自動保存草稿 · 30 秒後重試</span></div>
+        </div>
+      </div>
+    </div>
+
+    <h4 class="reveal" style="font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--primary);margin-bottom:8px;margin-top:24px;">儀表板資訊架構 (IA)</h4>
+    <div class="ia-grid reveal reveal-delay-1">
+      <div class="ia-card">
+        <div class="ia-card-icon icon-mono">◎</div>
+        <h5>動態問候與摘要</h5>
+        <p>明確當日任務目標，展示今日待處理異常數量，讓藥師一眼掌握優先事項，減少認知決策成本。</p>
+        <span class="ia-card-tag">例外管理原則</span>
+      </div>
+      <div class="ia-card">
+        <div class="ia-card-icon icon-mono">△</div>
+        <h5>高風險病患待辦卡片</h5>
+        <p>紅燈異常病患優先顯示，以連續趨勢判斷（而非單次數值）避免誤報，提高藥師信任度。</p>
+        <span class="ia-card-tag">AI 趨勢分析</span>
+      </div>
+      <div class="ia-card">
+        <div class="ia-card-icon icon-mono">↑</div>
+        <h5>健康數據視覺化</h5>
+        <p>快速掌握社區整體健康達標率，提供藥師進行社區公衛報告與 ESG 數據的量化素材。</p>
+        <span class="ia-card-tag">社區 CRM</span>
+      </div>
+      <div class="ia-card">
+        <div class="ia-card-icon icon-mono">$</div>
+        <h5>營運指標 (ROI)</h5>
+        <p>呈現本月系統帶來的額外營收與轉換價值，讓藥局老闆隨時確認「HealthTree 帶來的收益 > 訂閱費」。</p>
+        <span class="ia-card-tag">商業驗證</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ DESIGN ROADMAP: 實作流程 ════════ -->
+<section class="roadmap-section" id="roadmap">
+  <div class="section-eyebrow reveal">Design Roadmap</div>
+  <h2 class="section-title reveal reveal-delay-1">從 IA 到 Prototype 的實作流程</h2>
+  <p class="section-sub reveal reveal-delay-2">以下是這個專案採用的設計流程。每一步都有明確的產出物與時間分配，嚴格按順序執行、不跳步。</p>
+
+  <div class="roadmap reveal" style="margin-top:56px;">
+
+    <!-- Step 1 -->
+    <div class="roadmap-step">
+      <div class="roadmap-marker">
+        <div class="roadmap-num">1</div>
+        <div class="roadmap-line"></div>
+      </div>
+      <div class="roadmap-content">
+        <div class="roadmap-header">
+          <h4>先做 IA（藥師儀表板頁面清單）</h4>
+          <span class="roadmap-time">Day 1</span>
+          <div class="roadmap-gantt"><div class="roadmap-gantt-fill" style="width:10%;"></div></div>
+        </div>
+        <p class="roadmap-desc">第一步不急著開 Figma，而是先在 FigJam 上把所有頁面攤開來。確認系統邊界之後，才知道 Wireframe 總共要畫幾張、優先順序怎麼排。</p>
+        <ul class="roadmap-tasks">
+          <li>打開 FigJam，列出所有頁面名稱與層級</li>
+          <li>確認主導航：儀表板首頁 / 顧客列表 / 個人健康檔案 / 設定</li>
+          <li>定義每頁功能邊界：首頁放什麼卡片？顧客列表需要哪些篩選？</li>
+          <li>用連線串起頁面，檢查導航流程是否合理</li>
+        </ul>
+        <!-- IA Mini Sitemap -->
+        <div class="ia-sitemap">
+          <div class="sitemap-row sitemap-l0">
+            <div class="sitemap-node sitemap-root">
+              <strong>HealthTree 藥師儀表板</strong>
+              <span>App Shell · 左側導航列 · 頂部 Header · 通知中心</span>
+            </div>
+          </div>
+          <div class="sitemap-row sitemap-l1">
+            <div class="sitemap-node sitemap-blue">
+              <strong>首頁 Dashboard</strong>
+              <span>今日概覽與操作入口</span>
+            </div>
+            <div class="sitemap-node sitemap-default">
+              <strong>顧客管理 CRM</strong>
+              <span>顧客健康追蹤中心</span>
+            </div>
+            <div class="sitemap-node sitemap-orange">
+              <strong>衛教推播</strong>
+              <span>LINE 訊息發送管理</span>
+            </div>
+            <div class="sitemap-node sitemap-gray">
+              <strong>系統設定</strong>
+              <span>帳號與偏好設定</span>
+            </div>
+          </div>
+          <div class="sitemap-row sitemap-l2">
+            <div class="sitemap-node sitemap-sm">今日需關心清單</div>
+            <div class="sitemap-node sitemap-sm sitemap-coral">顧客詳細頁</div>
+            <div class="sitemap-node sitemap-sm">推播記錄</div>
+            <div class="sitemap-node sitemap-sm">藥局資料</div>
+          </div>
+          <div class="sitemap-row sitemap-l2">
+            <div class="sitemap-node sitemap-sm">數字指標總覽</div>
+            <div class="sitemap-node sitemap-sm">風險分層標籤</div>
+            <div class="sitemap-node sitemap-sm">推播模板庫</div>
+            <div class="sitemap-node sitemap-sm">整合與報告</div>
+          </div>
+          <div class="sitemap-caption">珊瑚色節點 = 鑽取頁面（Drill-down），顧客詳細頁含 4 子分頁：基本資料 · 用藥紀錄 · 生理趨勢 · 推播 LINE</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="roadmap-step">
+      <div class="roadmap-marker">
+        <div class="roadmap-num">2</div>
+        <div class="roadmap-line"></div>
+      </div>
+      <div class="roadmap-content">
+        <div class="roadmap-header">
+          <h4>低保真 Wireframe：只畫最重要的 2 個畫面</h4>
+          <span class="roadmap-time">Day 2–4</span>
+          <div class="roadmap-gantt"><div class="roadmap-gantt-fill" style="width:30%;"></div></div>
+        </div>
+        <p class="roadmap-desc">刻意不一次畫全部頁面，而是集中火力在「主頁 Dashboard」和「顧客詳細頁」。這兩頁是藥師每天必用的核心，也是後續 Prototype 測試的關鍵路徑。全部使用灰色方塊，不套任何顏色或真實文字，讓焦點放在「功能對不對」。</p>
+        <ul class="roadmap-tasks">
+          <li>在 Figma 建立 1440px Desktop Frame</li>
+          <li><strong>主頁 Dashboard：</strong>左側導航 + 右側主內容區（今日需關心紅卡片 + KPI 指標 + 近期活動流）</li>
+          <li><strong>顧客詳細頁：</strong>基本資料 + 用藥紀錄時間軸 + 血壓趨勢圖 + 「發送 LINE 關心」按鈕</li>
+          <li>全程灰色方塊，專注在佈局邏輯而非視覺表現</li>
+        </ul>
+
+        <!-- Lo-fi Wireframe Mockup -->
+        <div class="wireframe-preview">
+          <div class="wireframe-label">Lo-fi Wireframe — Dashboard 主頁</div>
+          <div class="wf-browser">
+            <div class="wf-bar"><div class="wf-dots"><span></span><span></span><span></span></div></div>
+            <div class="wf-layout">
+              <!-- Sidebar -->
+              <div class="wf-sidebar">
+                <div class="wf-block wf-logo"></div>
+                <div class="wf-block wf-nav-item wf-active"></div>
+                <div class="wf-block wf-nav-item"></div>
+                <div class="wf-block wf-nav-item"></div>
+                <div class="wf-block wf-nav-item"></div>
+              </div>
+              <!-- Main -->
+              <div class="wf-main">
+                <!-- Header -->
+                <div class="wf-header">
+                  <div class="wf-block wf-title"></div>
+                  <div class="wf-block wf-btn-ghost"></div>
+                </div>
+                <!-- KPI Row -->
+                <div class="wf-kpi-row">
+                  <div class="wf-kpi"><div class="wf-block wf-kpi-num"></div><div class="wf-block wf-kpi-label"></div></div>
+                  <div class="wf-kpi"><div class="wf-block wf-kpi-num"></div><div class="wf-block wf-kpi-label"></div></div>
+                  <div class="wf-kpi"><div class="wf-block wf-kpi-num"></div><div class="wf-block wf-kpi-label"></div></div>
+                  <div class="wf-kpi"><div class="wf-block wf-kpi-num"></div><div class="wf-block wf-kpi-label"></div></div>
+                </div>
+                <!-- Content Grid -->
+                <div class="wf-content-grid">
+                  <!-- Left: Patient List -->
+                  <div class="wf-panel">
+                    <div class="wf-block wf-panel-title"></div>
+                    <div class="wf-patient-card wf-alert">
+                      <div class="wf-block wf-avatar"></div>
+                      <div class="wf-patient-info"><div class="wf-block wf-line-long"></div><div class="wf-block wf-line-short"></div></div>
+                      <div class="wf-block wf-badge-danger"></div>
+                    </div>
+                    <div class="wf-patient-card">
+                      <div class="wf-block wf-avatar"></div>
+                      <div class="wf-patient-info"><div class="wf-block wf-line-long"></div><div class="wf-block wf-line-short"></div></div>
+                      <div class="wf-block wf-badge-warn"></div>
+                    </div>
+                    <div class="wf-patient-card">
+                      <div class="wf-block wf-avatar"></div>
+                      <div class="wf-patient-info"><div class="wf-block wf-line-long"></div><div class="wf-block wf-line-short"></div></div>
+                      <div class="wf-block wf-badge-ok"></div>
+                    </div>
+                  </div>
+                  <!-- Right: Quick Actions + Chart -->
+                  <div class="wf-panel">
+                    <div class="wf-block wf-panel-title"></div>
+                    <div class="wf-action-grid">
+                      <div class="wf-block wf-action"></div>
+                      <div class="wf-block wf-action"></div>
+                      <div class="wf-block wf-action"></div>
+                      <div class="wf-block wf-action"></div>
+                    </div>
+                    <div class="wf-block wf-panel-title" style="margin-top:12px;"></div>
+                    <div class="wf-block wf-chart"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="wireframe-annotations">
+            <div class="wf-anno"><span class="wf-anno-num">1</span> 紅色警示橫幅是第一視覺焦點，不需要再找</div>
+            <div class="wf-anno"><span class="wf-anno-num">2</span> KPI 四格等寬，顏色只用綠色（好）和琥珀色（注意）</div>
+            <div class="wf-anno"><span class="wf-anno-num">3</span> 顧客列表排序邏輯：未量測 → 漏服藥 → 數值異常 → 低風險</div>
+            <div class="wf-anno"><span class="wf-anno-num">4</span> 右側欄固定不隨左側清單滾動——快速操作永遠在旁邊</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="roadmap-step">
+      <div class="roadmap-marker">
+        <div class="roadmap-num">3</div>
+        <div class="roadmap-line"></div>
+      </div>
+      <div class="roadmap-content">
+        <div class="roadmap-header">
+          <h4>找 1 位真實藥師做 5 分鐘快速測試</h4>
+          <span class="roadmap-time">Day 4–5</span>
+          <div class="roadmap-gantt"><div class="roadmap-gantt-fill" style="width:50%;"></div></div>
+        </div>
+        <p class="roadmap-desc">Wireframe 完成後立刻找了一位社區藥師進行非正式的走廊測試。不需要正式的 Usability Lab，就是拿截圖給對方看，觀察第一反應。以下是實際的測試對話紀錄：</p>
+
+        <!-- Usability Test Simulation -->
+        <div class="ut-simulation">
+          <div class="ut-header">
+            <div class="ut-avatar-group">
+              <div class="ut-avatar ut-avatar-me">R</div>
+              <div class="ut-avatar ut-avatar-user">👨‍⚕️</div>
+            </div>
+            <div>
+              <div class="ut-title">走廊測試紀錄 — 陳藥師（52 歲）</div>
+              <div class="ut-meta">測試時間 4 分 32 秒 · 使用低保真 Wireframe 截圖</div>
+            </div>
+          </div>
+          <div class="ut-chat">
+            <div class="ut-msg ut-msg-me">
+              <div class="ut-msg-label">Reyna（設計師）</div>
+              <p>陳藥師，假設現在是早上 8 點，你剛打開這個系統。如果你想知道「哪個顧客上週沒來拿藥」，你會在畫面上哪裡找？</p>
+            </div>
+            <div class="ut-msg ut-msg-user">
+              <div class="ut-msg-label">陳藥師</div>
+              <p>嗯...我會先看左邊這個...（眼睛掃向左側紅色區塊）...「今日需關心」？但這是今天的，不是上週的...</p>
+              <div class="ut-observation">👁 觀察：第一眼確實被紅色警示吸引 (1.2 秒)，但「今日」和「上週」的時間範圍讓他猶豫。</div>
+            </div>
+            <div class="ut-msg ut-msg-user">
+              <div class="ut-msg-label">陳藥師</div>
+              <p>（往右看）「顧客管理」？應該是那邊... 可是這個版面沒有篩選的地方耶。</p>
+              <div class="ut-observation">👁 觀察：3.8 秒後轉向導航列。發現缺少「時間範圍篩選」功能。</div>
+            </div>
+            <div class="ut-msg ut-msg-me">
+              <div class="ut-msg-label">Reyna（設計師）</div>
+              <p>了解！那如果你看到這位「陳阿嬤」的卡片寫著「血壓連續 3 天異常」，你接下來會想做什麼？</p>
+            </div>
+            <div class="ut-msg ut-msg-user">
+              <div class="ut-msg-label">陳藥師</div>
+              <p>我會想點進去看看她最近的血壓數字... 然後如果真的不對，我會想 LINE 她的女兒通知一下。</p>
+              <div class="ut-observation">👁 觀察：核心流程驗證通過。「查看詳情 → 聯繫家屬」符合設計預期。</div>
+            </div>
+          </div>
+          <div class="ut-findings">
+            <div class="ut-finding-title">測試發現與迭代</div>
+            <div class="ut-finding-grid">
+              <div class="ut-finding ut-finding-issue">
+                <div class="ut-finding-label">Before — 測試發現的問題</div>
+                <p>Dashboard「今日需關心」無法區分時間範圍，藥師無法快速找到「上週未回診」的顧客。</p>
+                <div class="ut-finding-visual">
+                  <div class="ut-visual-mock">
+                    <div class="ut-mock-header">今日需關心的顧客</div>
+                    <div class="ut-mock-item">陳阿嬤 — 血壓異常</div>
+                    <div class="ut-mock-item">王伯伯 — 漏服藥</div>
+                    <div class="ut-mock-note">✕ 只有「今日」，無法篩選上週</div>
+                  </div>
+                </div>
+              </div>
+              <div class="ut-finding ut-finding-fix">
+                <div class="ut-finding-label">After — 迭代修正</div>
+                <p>在顧客列表新增「時間篩選 Tab」，並在 Dashboard 新增「逾期未回診」獨立卡片。</p>
+                <div class="ut-finding-visual">
+                  <div class="ut-visual-mock ut-visual-mock-good">
+                    <div class="ut-mock-tabs">
+                      <span>今日</span>
+                      <span class="ut-mock-tab-active">本週</span>
+                      <span>本月</span>
+                    </div>
+                    <div class="ut-mock-item">李奶奶 — 上週未回診</div>
+                    <div class="ut-mock-item">張伯伯 — 5 天未量測</div>
+                    <div class="ut-mock-note">✓ 新增時間篩選 + 逾期卡片</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="roadmap-step">
+      <div class="roadmap-marker">
+        <div class="roadmap-num">4</div>
+        <div class="roadmap-line"></div>
+      </div>
+      <div class="roadmap-content">
+        <div class="roadmap-header">
+          <h4>高保真 Mockup：套入 HealthTree 視覺</h4>
+          <span class="roadmap-time">Day 6–8</span>
+          <div class="roadmap-gantt"><div class="roadmap-gantt-fill" style="width:75%;"></div></div>
+        </div>
+        <p class="roadmap-desc">Wireframe 經過測試驗證佈局之後，才進入視覺設計階段。將灰色方塊替換成真實 UI 元件，套入 HealthTree 色彩系統與真實假資料，產出可以向老闆和投資人展示的高保真畫面。</p>
+        <ul class="roadmap-tasks">
+          <li>建立 Figma Color Style：Primary #1A6B3C / Danger #D32F2F / Warning #F5A623</li>
+          <li>將灰色方塊逐一替換成真實 UI 元件</li>
+          <li>填入有溫度的假資料（陳阿嬤 82 歲、王伯伯 75 歲...）</li>
+          <li>產出 Dashboard 主頁 Mockup——這是 Pitch 提案的主視覺</li>
+        </ul>
+
+        <!-- Hi-fi Mockup -->
+        <div class="hifi-preview">
+          <div class="wireframe-label">Hi-fi Mockup — Dashboard 主頁（套入 HealthTree 設計系統）</div>
+          <div class="hifi-browser">
+            <div class="wf-bar" style="background:#f0f0f0;"><div class="wf-dots"><span style="background:#FF5F57;"></span><span style="background:#FEBC2E;"></span><span style="background:#28C840;"></span></div><div class="mockup-url" style="flex:1;text-align:center;font-size:.6rem;color:#999;background:#e8e8e8;border-radius:4px;padding:2px 8px;margin-left:8px;">healthtree.app/dashboard</div></div>
+            <div class="hifi-layout">
+              <!-- Sidebar -->
+              <div class="hifi-sidebar">
+                <div class="hifi-logo">🌲 HealthTree</div>
+                <div class="hifi-nav-section">主選單</div>
+                <div class="hifi-nav-item hifi-nav-active">首頁總覽</div>
+                <div class="hifi-nav-item">顧客管理</div>
+                <div class="hifi-nav-item">衛教推播</div>
+                <div class="hifi-nav-section" style="margin-top:16px;">報告</div>
+                <div class="hifi-nav-item">ESG 月報</div>
+                <div class="hifi-nav-item">系統設定</div>
+                <div class="hifi-user">
+                  <div class="hifi-user-avatar"></div>
+                  <span>陳藥師</span>
+                </div>
+              </div>
+              <!-- Main Content -->
+              <div class="hifi-main">
+                <!-- Top bar -->
+                <div class="hifi-topbar">
+                  <div><strong style="font-size:.85rem;">今日概覽</strong><br><span style="font-size:.65rem;color:var(--text-muted);">2026年4月6日，星期一</span></div>
+                  <div class="hifi-btn-outline">匯出報告</div>
+                </div>
+                <!-- KPI Cards -->
+                <div class="hifi-kpi-row">
+                  <div class="hifi-kpi">
+                    <div class="hifi-kpi-label">追蹤顧客總數</div>
+                    <div class="hifi-kpi-num">87</div>
+                    <div class="hifi-kpi-change hifi-up">本月新增 3 人</div>
+                  </div>
+                  <div class="hifi-kpi">
+                    <div class="hifi-kpi-label">7 日打卡率</div>
+                    <div class="hifi-kpi-num" style="color:var(--status-warn);">73%</div>
+                    <div class="hifi-kpi-change hifi-down">較上週 -4%</div>
+                  </div>
+                  <div class="hifi-kpi">
+                    <div class="hifi-kpi-label">30 日回店率</div>
+                    <div class="hifi-kpi-num" style="color:var(--primary);">68%</div>
+                    <div class="hifi-kpi-change hifi-up">較上月 +11%</div>
+                  </div>
+                  <div class="hifi-kpi">
+                    <div class="hifi-kpi-label">本月推播發送</div>
+                    <div class="hifi-kpi-num">142</div>
+                    <div class="hifi-kpi-change">開封率 81%</div>
+                  </div>
+                </div>
+                <!-- Body Grid -->
+                <div class="hifi-body-grid">
+                  <!-- Left: Alert List -->
+                  <div class="hifi-panel">
+                    <div class="hifi-panel-header">
+                      <strong>今日需關心的顧客</strong>
+                      <span class="hifi-link">查看全部 5 人</span>
+                    </div>
+                    <div class="hifi-alert-card">
+                      <div class="hifi-alert-name">陳阿嬤<span>連續 3 天未量測</span></div>
+                      <span class="badge badge-red">高風險</span>
+                    </div>
+                    <div class="hifi-alert-card">
+                      <div class="hifi-alert-name">王伯伯<span>昨日漏服藥</span></div>
+                      <span class="badge badge-yellow">提醒</span>
+                    </div>
+                    <div class="hifi-alert-card">
+                      <div class="hifi-alert-name">李奶奶<span>血壓連續 3 日高於 140</span></div>
+                      <span class="badge badge-yellow">提醒</span>
+                    </div>
+                  </div>
+                  <!-- Right: Activity Feed -->
+                  <div class="hifi-panel">
+                    <div class="hifi-panel-header">
+                      <strong>最近動態</strong>
+                      <span class="hifi-link">全部</span>
+                    </div>
+                    <div class="hifi-feed-item">
+                      <div class="hifi-feed-dot hifi-feed-green"></div>
+                      <div><strong>陳阿嬤</strong> 完成今日血壓量測（128/82）<br><span>09:14</span></div>
+                    </div>
+                    <div class="hifi-feed-item">
+                      <div class="hifi-feed-dot hifi-feed-red"></div>
+                      <div><strong>王伯伯</strong> 未服降血糖藥<br><span>08:30</span></div>
+                    </div>
+                    <div class="hifi-feed-item">
+                      <div class="hifi-feed-dot hifi-feed-yellow"></div>
+                      <div><strong>李奶奶</strong> 血壓連續 3 日高於 140<br><span>昨日 22:10</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="wireframe-annotations">
+            <div class="wf-anno"><span class="wf-anno-num">Lo-fi → Hi-fi</span> 灰色方塊已替換為真實 UI 元件，色彩語意（紅/黃/綠）引導藥師視線焦點</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 5 -->
+    <div class="roadmap-step roadmap-step-last">
+      <div class="roadmap-marker">
+        <div class="roadmap-num">5</div>
+        <div class="roadmap-line"></div>
+      </div>
+      <div class="roadmap-content">
+        <div class="roadmap-header">
+          <h4>Figma Prototype：串接核心使用流程</h4>
+          <span class="roadmap-time">Day 8–10</span>
+          <div class="roadmap-gantt"><div class="roadmap-gantt-fill" style="width:100%;"></div></div>
+        </div>
+        <p class="roadmap-desc">最後一步，只串接一條最關鍵的流程。不需要整個產品都能點，核心流程是：看到異常顧客 → 點進去 → 查看紀錄 → 發送 LINE 關心 → 看到成功狀態。</p>
+        <ul class="roadmap-tasks">
+          <li>在 Figma 用 Prototype 模式，將 5 個畫面用箭頭串起來</li>
+          <li><strong>Frame 1：</strong>Dashboard 主頁（有紅色「今日需關心 3 人」卡片）</li>
+          <li><strong>Frame 2：</strong>點擊後進入顧客列表（已篩選出 3 人）</li>
+          <li><strong>Frame 3：</strong>點擊「陳阿嬤」進入個人詳細頁</li>
+          <li><strong>Frame 4：</strong>點「發送 LINE 關心」按鈕 → 跳出確認 Modal</li>
+          <li><strong>Frame 5：</strong>確認後顯示「已發送！」成功狀態</li>
+        </ul>
+        <div class="roadmap-result">
+          <span>🎯</span> 這 5 個畫面的 Prototype 就可以拿去做正式的 Usability Test
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Warning Tips -->
+  <div class="roadmap-warnings reveal" style="margin-top:48px;">
+    <h4 style="font-size:.85rem;font-weight:700;color:var(--status-error);margin-bottom:16px;display:flex;align-items:center;gap:8px;">⚠ 這個流程中特別避開的三個坑</h4>
+    <div class="warning-cards">
+      <div class="warning-card">
+        <div class="warning-icon">✕</div>
+        <div>
+          <h5>不要一開始就畫所有頁面</h5>
+          <p>先把最核心的 2 頁做好，比 10 頁都做爛更有價值。集中火力在 Dashboard 和顧客詳細頁。</p>
+        </div>
+      </div>
+      <div class="warning-card">
+        <div class="warning-icon">◇</div>
+        <div>
+          <h5>Wireframe 階段不要選顏色</h5>
+          <p>顏色是後期的事。Wireframe 全程灰色，才能讓測試者專注在「功能對不對」而非「顏色好不好看」。</p>
+        </div>
+      </div>
+      <div class="warning-card">
+        <div class="warning-icon">◈</div>
+        <div>
+          <h5>不要還沒測試就做高保真</h5>
+          <p>高保真很貴，做了之後很難改。一定要先用灰色 Wireframe 驗證佈局和邏輯，再投入視覺設計。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ PHASE 4: Design ════════ -->
+<section class="phase4-design" id="phase4">
+  <div class="section-eyebrow reveal">Phase 04 · Design</div>
+  <h2 class="section-title reveal reveal-delay-1">視覺設計與設計系統</h2>
+  <p class="section-sub reveal reveal-delay-2">捨棄刺眼的純白與高飽和色彩，選用帶有溫度的醫療綠為主色。只用 400/500 兩種字重，元件統一 8px 圓角，降低工程交接的認知成本。</p>
+
+  <div class="ds-grid-white" style="margin-top:56px;">
+    <!-- Left: Color + Typography -->
+    <div class="reveal">
+      <h4 class="ds-label">色彩系統 Design Tokens</h4>
+      <div class="ds-color-grid">
+        <div class="ds-color-card">
+          <div class="ds-color-swatch" style="background:#1D9E75;"></div>
+          <div class="ds-color-info"><strong>Primary</strong><span>#1D9E75</span></div>
+          <div class="ds-color-note">對比度 4.6:1 · WCAG AA</div>
+        </div>
+        <div class="ds-color-card">
+          <div class="ds-color-swatch" style="background:#E1F5EE;"></div>
+          <div class="ds-color-info"><strong>P. Pale</strong><span>#E1F5EE</span></div>
+          <div class="ds-color-note">卡片 Hover / 次要區塊</div>
+        </div>
+        <div class="ds-color-card">
+          <div class="ds-color-swatch" style="background:#F5FAF8;"></div>
+          <div class="ds-color-info"><strong>Background</strong><span>#F5FAF8</span></div>
+          <div class="ds-color-note">微綠調淺灰 · 降低疲勞</div>
+        </div>
+        <div class="ds-color-card">
+          <div class="ds-color-swatch" style="background:#1A1A1A;"></div>
+          <div class="ds-color-info"><strong>Text</strong><span>#1A1A1A</span></div>
+          <div class="ds-color-note">主要文字</div>
+        </div>
+      </div>
+
+      <h4 class="ds-label" style="margin-top:32px;">狀態語意色 Status Colors</h4>
+      <div class="ds-status-grid">
+        <div class="ds-status-item ds-status-danger">
+          <div class="ds-status-dot" style="background:#D32F2F;"></div>
+          <div><strong>Danger</strong> #D32F2F<br><span>異常警示 · 高風險</span></div>
+        </div>
+        <div class="ds-status-item ds-status-warn">
+          <div class="ds-status-dot" style="background:#EF9F27;"></div>
+          <div><strong>Warning</strong> #EF9F27<br><span>提醒 · 需注意</span></div>
+        </div>
+        <div class="ds-status-item ds-status-info">
+          <div class="ds-status-dot" style="background:#2F80ED;"></div>
+          <div><strong>Info</strong> #2F80ED<br><span>一般資訊</span></div>
+        </div>
+        <div class="ds-status-item ds-status-success">
+          <div class="ds-status-dot" style="background:#1D9E75;"></div>
+          <div><strong>Success</strong> #1D9E75<br><span>正常 · 達標</span></div>
+        </div>
+      </div>
+
+      <h4 class="ds-label" style="margin-top:32px;">字型比例 Type Scale</h4>
+      <div class="ds-type-scale">
+        <div class="ds-type-row">
+          <span class="ds-type-meta">H1 · 32px · 700</span>
+          <span class="ds-type-sample" style="font-size:1.5rem;font-weight:700;">HealthTree</span>
+        </div>
+        <div class="ds-type-row">
+          <span class="ds-type-meta">H2 · 20px · 500</span>
+          <span class="ds-type-sample" style="font-size:1.1rem;font-weight:500;">社區健康儀表板</span>
+        </div>
+        <div class="ds-type-row">
+          <span class="ds-type-meta">Body · 14px · 400</span>
+          <span class="ds-type-sample" style="font-size:.88rem;">今日需關注 3 位高風險患者</span>
+        </div>
+        <div class="ds-type-row">
+          <span class="ds-type-meta">Caption · 12px · 400</span>
+          <span class="ds-type-sample" style="font-size:.75rem;color:var(--text-muted);">最後更新 08:30 AM</span>
+        </div>
+      </div>
+      <div class="ds-type-note">全站統一 DM Sans，使用 400 / 500 / 700 三種字重。不額外載入 Serif 字型，降低首屏載入時間。</div>
+    </div>
+
+    <!-- Right: Component Library on WHITE background -->
+    <div class="reveal reveal-delay-1">
+      <h4 class="ds-label">UI 元件庫 Component Library</h4>
+
+      <div class="ds-comp-group">
+        <div class="ds-comp-label">Buttons — 四種層級清晰分辨</div>
+        <div class="ds-comp-row">
+          <button class="ds-btn ds-btn-primary">主要按鈕</button>
+          <button class="ds-btn ds-btn-secondary">次要按鈕</button>
+          <button class="ds-btn ds-btn-ghost">Ghost</button>
+          <button class="ds-btn ds-btn-disabled" disabled>停用</button>
+        </div>
+        <div class="ds-comp-note">統一 8px 圓角。層級差距：填色 → 淡色填充 → 只有邊框 → 灰掉。</div>
+      </div>
+
+      <div class="ds-comp-group">
+        <div class="ds-comp-label">Input Field</div>
+        <div class="ds-comp-row">
+          <input class="ds-input" placeholder="搜尋病患姓名..." />
+          <input class="ds-input ds-input-focus" value="陳阿嬤" />
+        </div>
+      </div>
+
+      <div class="ds-comp-group">
+        <div class="ds-comp-label">Patient Status Cards — 白底展示</div>
+        <div class="ds-patient-card ds-patient-danger">
+          <div class="ds-patient-left">
+            <div class="ds-patient-name">王阿嬤 · 82 歲</div>
+            <div class="ds-patient-info">血壓 158/96 · 連續 3 天異常</div>
+          </div>
+          <span class="status-badge s-red">高風險</span>
+        </div>
+        <div class="ds-patient-card">
+          <div class="ds-patient-left">
+            <div class="ds-patient-name">李阿公 · 79 歲</div>
+            <div class="ds-patient-info">今日已打卡 ✓</div>
+          </div>
+          <span class="status-badge s-green">正常</span>
+        </div>
+      </div>
+
+      <div class="ds-comp-group">
+        <div class="ds-comp-label">Skeleton Loading → 載入完成（Before / After）</div>
+        <div class="ds-skeleton-compare">
+          <div class="ds-skeleton-side">
+            <div class="ds-skeleton-tag">Loading 狀態</div>
+            <div class="ds-skeleton-demo">
+              <div class="ds-skeleton-line" style="width:55%;"></div>
+              <div class="ds-skeleton-line" style="width:75%;"></div>
+              <div class="ds-skeleton-line" style="width:40%;"></div>
+            </div>
+          </div>
+          <div class="ds-skeleton-arrow">→</div>
+          <div class="ds-skeleton-side">
+            <div class="ds-skeleton-tag ds-skeleton-tag-done">載入完成</div>
+            <div class="ds-patient-card ds-patient-danger" style="margin-bottom:0;">
+              <div class="ds-patient-left">
+                <div class="ds-patient-name">王阿嬤 · 82 歲</div>
+                <div class="ds-patient-info">血壓 158/96 · 連續 3 天異常</div>
+              </div>
+              <span class="status-badge s-red">高風險</span>
+            </div>
+          </div>
+        </div>
+        <div class="ds-comp-note">對應元件：Patient Status Card。Skeleton 形狀與實際內容佈局一致，避免載入後的版面跳動（Layout Shift）。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ PHASE 5: Validate ════════ -->
+<section class="phase4" id="phase5">
+  <div class="section-eyebrow reveal">Phase 05 · Validate</div>
+  <h2 class="section-title reveal reveal-delay-1">使用者驗證與商業提案</h2>
+  <p class="section-sub reveal reveal-delay-2">設計不是畫完就結束。透過真實使用者測試驗證易用性，以數據指標量化設計價值，最終以完整故事線向投資人與客戶展示商業影響力。</p>
+
+  <!-- UX Validation Metrics -->
+  <div class="reveal" style="margin-top:56px;">
+    <h4 style="font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--primary);margin-bottom:20px;">UX 驗證指標 — 設計如何證明「有效」</h4>
+    <div class="metrics-strip">
+      <div class="metric-item">
+        <div class="metric-num">10<span class="metric-unit">秒</span></div>
+        <div class="metric-label">找到異常病患<br>目標任務時間</div>
+        <div class="metric-actual">實測 7.2 秒 <span class="metric-pass">PASS</span></div>
+      </div>
+      <div class="metric-item">
+        <div class="metric-num">≥50</div>
+        <div class="metric-label">藥師 NPS 目標<br>使用順手度</div>
+        <div class="metric-actual">實測 NPS 62 <span class="metric-pass">PASS</span></div>
+      </div>
+      <div class="metric-item">
+        <div class="metric-num">&lt;3<span class="metric-unit">%</span></div>
+        <div class="metric-label">誤觸率目標<br>關鍵操作準確性</div>
+        <div class="metric-actual">實測 1.8% <span class="metric-pass">PASS</span></div>
+      </div>
+      <div class="metric-item">
+        <div class="metric-num">≥85<span class="metric-unit">%</span></div>
+        <div class="metric-label">任務完成率<br>核心流程走完</div>
+        <div class="metric-actual">實測 92% <span class="metric-pass">PASS</span></div>
+      </div>
+    </div>
+    <div class="metric-disclaimer">
+      <p>* 概念驗證階段的非正式走廊測試（n=3），數據僅供方向性參考。NPS 以 3 位藥師的平均回答計算，樣本量不足以代表統計顯著性。下一步需在 PoC 階段以 ≥ 30 位藥師進行正式 Usability Test，才能確認指標的可靠性。</p>
+    </div>
+  </div>
+
+  <!-- Conversion Design Points -->
+  <div class="reveal" style="margin-top:48px;">
+    <h4 style="font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--primary);margin-bottom:20px;">轉換重點設計 — 在哪裡埋 CTA</h4>
+    <div class="ia-grid">
+      <div class="ia-card">
+        <div class="ia-card-icon icon-mono">!</div>
+        <h5>紅色警示 → 點擊查看詳情</h5>
+        <p>Dashboard 高風險卡片是最強 CTA。紅色視覺權重確保藥師第一眼看到，點擊率目標 ≥ 90%。</p>
+        <span class="ia-card-tag">首要轉換點</span>
+      </div>
+      <div class="ia-card">
+        <div class="ia-card-icon icon-mono">↗</div>
+        <h5>一鍵 LINE 關懷 → 完成率</h5>
+        <p>「發送關心」按鈕是核心價值實現點。流程簡化至 2 步完成（選模板 → 確認發送），目標完成率 ≥ 80%。</p>
+        <span class="ia-card-tag">價值實現點</span>
+      </div>
+      <div class="ia-card">
+        <div class="ia-card-icon icon-mono">∿</div>
+        <h5>ROI 儀表板 → 續訂決策</h5>
+        <p>每月自動生成「本月額外營收」報表，讓藥局老闆直觀看到「收益 > 訂閱費」，降低退訂率。</p>
+        <span class="ia-card-tag">留存關鍵點</span>
+      </div>
+      <div class="ia-card">
+        <div class="ia-card-icon icon-mono">★</div>
+        <h5>健康打卡 → 長輩留存</h5>
+        <p>以「健康日記」取代「被監控感」，搭配每週摘要推播給子女。打卡語氣設計為「照顧自己」而非「有人在看」。</p>
+        <span class="ia-card-tag">尊嚴導向設計</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pitch Deck Logic -->
+  <div class="reveal" style="margin-top:48px;">
+    <h4 style="font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--primary);margin-bottom:20px;">Pitch 提案邏輯 — 如何用 10 分鐘說服投資人</h4>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;" class="reveal reveal-delay-1">
+      <div class="pitch-card">
+        <div class="pitch-number">01</div>
+        <h4>痛點定義</h4>
+        <p>以 400萬+、45%、83% 三大數據開場，讓投資人立刻感受市場規模與問題緊迫性。「台灣每 2 位長輩就有 1 位曾漏服藥。」</p>
+      </div>
+      <div class="pitch-card">
+        <div class="pitch-number">02</div>
+        <h4>解法提案</h4>
+        <p>HealthTree 三方連結平台（藥局 × 長輩 × 子女），填補社區藥局 O2O 醫療服務的關鍵斷點。非穿戴、不侵犯隱私。</p>
+      </div>
+      <div class="pitch-card">
+        <div class="pitch-number">03</div>
+        <h4>Prototype Demo</h4>
+        <p>現場展示藥師每日 10 分鐘晨間巡檢流程。讓評審親身點擊 5 個 Frame，感受「10 秒內找到異常病患」的易用性。</p>
+      </div>
+      <div class="pitch-card">
+        <div class="pitch-number">04</div>
+        <h4>ROI 估算</h4>
+        <p>回店率 +15%、月均 100 客、客單 NT$800 → 額外月營收 NT$12,000。訂閱費 NT$1,500–3,000，ROI 達 4–8 倍。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Post-Launch Metrics -->
+  <div class="reveal" style="margin-top:48px;">
+    <h4 style="font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--primary);margin-bottom:20px;">上線後觀察指標 — 持續驗證設計價值</h4>
+    <div class="handoff-list">
+      <div class="handoff-item">
+        <div class="handoff-icon">01</div>
+        <div class="handoff-content">
+          <h6>跳出率 Bounce Rate</h6>
+          <p>Dashboard 首頁跳出率目標 < 20%。若過高，代表藥師登入後找不到要做的事，需檢視資訊層級。</p>
+        </div>
+      </div>
+      <div class="handoff-item">
+        <div class="handoff-icon">02</div>
+        <div class="handoff-content">
+          <h6>任務完成率 Task Completion Rate</h6>
+          <p>「查看異常 → 發送關懷」核心流程完成率目標 ≥ 85%。未完成者追蹤在哪一步流失。</p>
+        </div>
+      </div>
+      <div class="handoff-item">
+        <div class="handoff-icon">03</div>
+        <div class="handoff-content">
+          <h6>點擊熱區 Heatmap</h6>
+          <p>透過 Hotjar 追蹤藥師實際點擊分佈，驗證紅色警示卡片是否為第一視覺焦點，確認設計假設。</p>
+        </div>
+      </div>
+      <div class="handoff-item">
+        <div class="handoff-icon">04</div>
+        <div class="handoff-content">
+          <h6>平均工作階段時間</h6>
+          <p>目標控制在 8–12 分鐘。過短代表功能不足，過長代表介面效率低。與「10 分鐘晨間巡檢」設計目標對齊。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ PHASE 6: Deliver ════════ -->
+<section class="phase2" id="phase6">
+  <div class="section-eyebrow reveal">Phase 06 · Deliver</div>
+  <h2 class="section-title reveal reveal-delay-1">開發交接與上線規範</h2>
+  <p class="section-sub reveal reveal-delay-2">設計完美還原的最後一哩路。完整的交接規範確保工程師不需要「猜」任何設計意圖，減少來回溝通成本。</p>
+
+  <div class="phase4-grid" style="margin-top:56px;">
+    <div class="reveal">
+      <h4 style="font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--primary);margin-bottom:20px;">設計交接清單 Design Handoff Checklist</h4>
+      <div class="handoff-list">
+        <div class="handoff-item">
+          <div class="handoff-icon">01</div>
+          <div class="handoff-content">
+            <h6>Design Tokens</h6>
+            <p>顏色、間距、圓角以 CSS 變數定義，一份 token 檔同步 Figma 與代碼</p>
+          </div>
+        </div>
+        <div class="handoff-item">
+          <div class="handoff-icon">02</div>
+          <div class="handoff-content">
+            <h6>Grid & RWD 斷點</h6>
+            <p>12 欄 Grid · Mobile 375 / Tablet 768 / Desktop 1280+ · 每斷點有 Figma Frame</p>
+          </div>
+        </div>
+        <div class="handoff-item">
+          <div class="handoff-icon">03</div>
+          <div class="handoff-content">
+            <h6>互動狀態</h6>
+            <p>完整標註 Default / Hover / Active / Focus / Disabled / Loading 六種狀態</p>
+          </div>
+        </div>
+        <div class="handoff-item">
+          <div class="handoff-icon">04</div>
+          <div class="handoff-content">
+            <h6>Skeleton & Empty State</h6>
+            <p>載入中骨架 + 無資料空狀態，確保各種情況都有 UI</p>
+          </div>
+        </div>
+        <div class="handoff-item">
+          <div class="handoff-icon">05</div>
+          <div class="handoff-content">
+            <h6>無障礙 A11y</h6>
+            <p>WCAG AA 對比度 · 鍵盤可操作 · 大字體模式 · OCR 輸入</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal reveal-delay-1">
+      <h4 style="font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--primary);margin-bottom:20px;">Figma 標註規範</h4>
+      <div class="handoff-list">
+        <div class="handoff-item">
+          <div class="handoff-icon">06</div>
+          <div class="handoff-content">
+            <h6>間距系統</h6>
+            <p>4px 基礎單位（4/8/12/16/24/32/48）· Auto Layout 直接讀取</p>
+          </div>
+        </div>
+        <div class="handoff-item">
+          <div class="handoff-icon">07</div>
+          <div class="handoff-content">
+            <h6>字型文案</h6>
+            <p>DM Sans 全站統一 · 400/500/700 三種字重 · 所有文案在 Figma 中定義</p>
+          </div>
+        </div>
+        <div class="handoff-item">
+          <div class="handoff-icon">08</div>
+          <div class="handoff-content">
+            <h6>圖示匯出</h6>
+            <p>SVG 格式 · 1x/2x 解析度 · 元件命名對齊前端 class name</p>
+          </div>
+        </div>
+        <div class="handoff-item">
+          <div class="handoff-icon">09</div>
+          <div class="handoff-content">
+            <h6>動畫轉場</h6>
+            <p>hover 200ms / 頁面 300ms / skeleton 1.5s · ease-out 曲線</p>
+          </div>
+        </div>
+        <div class="handoff-item">
+          <div class="handoff-icon">10</div>
+          <div class="handoff-content">
+            <h6>Design QA</h6>
+            <p>上線前逐頁對照 Figma · pixel-perfect 檢查間距、色彩、互動</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ DESIGNER'S NOTE ════════ -->
+<section class="designer-note-section">
+  <div class="designer-note reveal">
+    <div class="designer-note-label">Designer's Note</div>
+    <blockquote class="designer-note-text">
+      這是一個從零開始的假設性產品，沒有真實市場數據，但每一個設計決策都來自真實的田野觀察與邏輯推演。下一步如果能進入 PoC 驗證，最想測試的是——長輩的 O2O 打卡習慣是否真的能在兩週內養成。
+    </blockquote>
+    <div class="designer-note-author">
+      <div class="designer-note-avatar">R</div>
+      <div>
+        <strong>Reyna</strong>
+        <span>UX Designer · HealthTree Project</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ ROI BANNER ════════ -->
+<div class="roi-banner reveal">
+  <div>
+    <h3>讓每一位長輩身後，<br>都有一棵守護大樹 🌲</h3>
+    <p>非穿戴・不侵犯隱私・社區溫度的智慧健康守護平台。期待與您進一步討論 PoC 合作機會。</p>
+  </div>
+  <div class="roi-stats">
+    <div class="roi-stat">
+      <div class="roi-stat-num">4–8×</div>
+      <div class="roi-stat-label">藥局投資回報率<br>ROI 估算</div>
+    </div>
+    <div class="roi-stat">
+      <div class="roi-stat-num">NT$99</div>
+      <div class="roi-stat-label">子女訂閱月費<br>安心無價</div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ FOOTER ════════ -->
+<footer>
+  <div class="footer-left">
+    <div class="footer-brand">🌲 HealthTree × Reyna</div>
+    <div class="footer-desc">UX Case Study — 智慧藥局遠距健康監測儀表板<br>Designed with ♡ in Figma · 2026</div>
+  </div>
+  <div class="footer-right">
+    <div class="footer-credit">icare.ntc.im ｜ HealthTree Team ｜ 2026</div>
+    <a href="#" class="footer-link">Figma Prototype →</a>
+    <a href="#top" class="footer-link">↑ Back to top</a>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
